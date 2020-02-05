@@ -128,3 +128,7 @@ hr{
     border-width: 1px;
     border-color: grey;
 }
+#btn_img{
+    width: 20px;
+    height: 20px;
+}
