@@ -9,7 +9,7 @@ import {CategoryProductsComponent} from './category-products/category-products.c
 import {ProductViewComponent} from './product-view/product-view.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/categories', pathMatch: 'full' },
+  {path: '', redirectTo: '/categories', pathMatch: 'full' },
   {path: 'categories', component: DashboardComponent},
   {path: 'categories/:id/products', component: CategoryProductsComponent},
   {path: 'categories/:id/products/:id2', component: ProductViewComponent},

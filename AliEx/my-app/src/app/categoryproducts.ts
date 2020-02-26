@@ -1,4 +1,3 @@
-import {Product} from './Product';
 import {Category} from './Category';
 
 export const categories: Category[] = [
@@ -12,7 +11,6 @@ export const categories: Category[] = [
       name: 'Philips SHP9500 Профессиональные наушники с 3 м длиной, ' +
         'проводной наушники для xiaomi SamSung S9 S10 MP3 Поддержка официальный проверки',
       description: 'Продукт параметры:\n' +
-        '\n' +
         '1. Бренд продукта: Philips\n' +
         '2. Модель продукта: Philips SHP9500\n' +
         '3. Стиль ношения: гарнитура\n' +

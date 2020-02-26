@@ -16,9 +16,9 @@ export class CategoryService {
   getCategory(id: number): Observable<Category> {
     return of(categories[id]);
   }
-  getProducts(id: number): Observable<Product[]>{
-    return of(categories[id].products);
-  }
+  // getProducts(id: number): Observable<Product[]>{
+  //   return of(categories[id].products);
+  // }
   getProduct(id: number, id2: number): Observable<Product>{
     return of(categories[id].products[id2 - 1]);
   }
