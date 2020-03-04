@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { categories } from './categoryproducts';
 import { Observable, of } from 'rxjs';
-import {Product} from './Product';
+import {Product} from './Product'
 import {Category} from './Category';
 
 @Injectable({

@@ -26,7 +26,7 @@ export class CategoryProductsComponent implements OnInit {
     this.categoryService.getCategory(id).subscribe(category => this.category = category);
   }
 
-  back(){
+  back() {
     this.location.back();
   }
 }

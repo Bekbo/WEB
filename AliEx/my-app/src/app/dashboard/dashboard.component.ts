@@ -19,6 +19,6 @@ export class DashboardComponent implements OnInit {
 
   getCategories(): void {
     this.categoryService.getCategories()
-    .subscribe(categories => this.categories = categories.slice(0, 4));
+      .subscribe(categories => this.categories = categories.slice(0, 4));
   }
 }

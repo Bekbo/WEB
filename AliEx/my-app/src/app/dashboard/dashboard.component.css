@@ -1,8 +1,8 @@
 .main{
   margin-top: 25px;
   display: flex;
-  flex-direction: row;
-  /*align-content: center;*/
+  justify-content: center;
+  align-items: center;
 }
 .item{
   margin-right: 120px;
