@@ -8,10 +8,9 @@ import { Hero } from './hero';
 import { MessageService } from './message.service';
 
 @Injectable({ providedIn: 'root' })
+
 export class HeroService {
-
   private heroesUrl = 'api/heroes';  // URL to web api
-
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
   };
@@ -48,6 +47,7 @@ export class HeroService {
       catchError(this.handleError<Hero>(`getHero id=${id}`))
     );
   }
+
   searchHeroes(term: string): Observable<Hero[]> {
     if (!term.trim()) {
       // if not search term, return empty hero array.
