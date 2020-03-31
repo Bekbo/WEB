@@ -37,7 +37,7 @@ class Product(models.Model):
 		return data
 
 	def __str__(self):
-		return self.name
+		return self.name+ " " + self.price
 
 	class Meta:
 		verbose_name = "Product"

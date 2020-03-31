@@ -2,10 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 from .models import Product,Category
+import json
 
 def products(request):
 	json_prods = [p.to_json() for p in Product.objects.all()]
 	return render(request, 'home.html', {'name' : 'Products', 'Products' : json_prods})
+	# return render(request, json.JsonResponse(json_prods))
 
 def home(request):
 	return render(request, 'home.html', {'name' : 'Root'})
