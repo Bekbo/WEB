@@ -7,6 +7,7 @@ import { ForManCategoriesComponent } from './for-man-categories/for-man-categori
 import { ForWomanCategoriesComponent } from './for-woman-categories/for-woman-categories.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ViewProductsComponent } from './view-products/view-products.component';
+import { ViewProductComponent } from './view-product/view-product.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ViewProductsComponent } from './view-products/view-products.component';
     ForAllCategoriesComponent,
     ForManCategoriesComponent,
     ForWomanCategoriesComponent,
-    ViewProductsComponent
+    ViewProductsComponent,
+    ViewProductComponent
   ],
   imports: [
     BrowserModule,

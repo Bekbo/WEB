@@ -1,5 +1,4 @@
 import {Product} from './Product';
-
 export interface User {
   id: number;
   login: string;

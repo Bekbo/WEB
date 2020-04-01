@@ -1,2 +1,5 @@
-<p>view-products works!</p>
-{{ids}}
+<ul *ngIf="products">
+  <li *ngFor="let product of products">
+    {{product.name}}
+  </li>
+</ul>
