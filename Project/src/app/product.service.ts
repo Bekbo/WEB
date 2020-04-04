@@ -17,8 +17,11 @@ export class ProductService {
   getCategories(): Observable<Category[]> {
     return of(categories);
   }
-  getCategoryProducts(): Observable<Product[]>{
+  getCategoryProducts(): Observable<Product[]> {
     return of(products);
+  }
+  getProduct(id: number): Observable<Product[]> {
+    return of(products.filter(product => product.id === id));
   }
   // getCategory(id: number): Observable<Category> {
   //   return of(categories[id]);

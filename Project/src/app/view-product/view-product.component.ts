@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
+
+import { Product } from '../Product';
+import { ProductService} from '../product.service';
 
 @Component({
   selector: 'app-view-product',
@@ -6,10 +11,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-product.component.css']
 })
 export class ViewProductComponent implements OnInit {
+  products = [];
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductService,
+    private location: Location
+  ) { }
 
   ngOnInit(): void {
+    this.getProduct();
   }
-
+  getProduct(): void {
+    const id = +this.route.snapshot.paramMap.get('id');
+    this.productsService.getProducts()
+      .subscribe(products => this.products = products.filter(product => product.id === id));
+  }
 }
