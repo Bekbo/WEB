@@ -1,8 +1,5 @@
 <div *ngFor="let u of users">
-  <h1>User {{u.login}}</h1>
-</div>
-<div *ngIf="!users">
-  No Users
+  <h1>User {{u.login}} | {{u.password}}</h1>
 </div>
 <div class="login" *ngIf="signIn">
   <div class="form">

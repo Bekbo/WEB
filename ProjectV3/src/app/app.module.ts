@@ -15,6 +15,8 @@ import { InMemoryDataService} from './in-memory-data.service';
 import {FormsModule} from '@angular/forms';
 import { BottomNavigationComponent } from './bottom-navigation/bottom-navigation.component';
 import { AdviceMenuComponent } from './advice-menu/advice-menu.component';
+import { LoggedStatusComponent } from './logged-status/logged-status.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule(
   {
@@ -36,7 +38,9 @@ import { AdviceMenuComponent } from './advice-menu/advice-menu.component';
       ViewProductsComponent,
       SignComponent,
       BottomNavigationComponent,
-      AdviceMenuComponent
+      AdviceMenuComponent,
+      LoggedStatusComponent,
+      ProfileComponent
     ],
   providers: [],
   bootstrap: [AppComponent]
