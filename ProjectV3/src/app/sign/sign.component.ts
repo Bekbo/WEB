@@ -17,10 +17,12 @@ export class SignComponent implements OnInit {
   users: User[];
   constructor(
     private route: ActivatedRoute,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private productService: ProductService
   ) { }
 
   ngOnInit(): void {
+    this.getAction();
     this.getUsers();
   }
   getAction() {
@@ -52,10 +54,11 @@ export class SignComponent implements OnInit {
     const pass = (document.getElementById('password1') as HTMLInputElement).value;
     console.log(login + ' ' + pass);
   }
-  private getUsers() {
-    this.getAction();
+  getUsers() {
     console.log('get');
-    this.userService.getUsers().subscribe(users => this.users === users);
+    this.userService.getUsers().
+      subscribe(users => this.users === users.filter(user => user.id > 0)
+    );
     console.log('users');
     console.log(this.users.length);
   }

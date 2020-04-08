@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductService} from './product.service';
 import { InMemoryDataService} from './in-memory-data.service';
 import {FormsModule} from '@angular/forms';
+import { BottomNavigationComponent } from './bottom-navigation/bottom-navigation.component';
+import { AdviceMenuComponent } from './advice-menu/advice-menu.component';
 
 @NgModule(
   {
@@ -32,7 +34,9 @@ import {FormsModule} from '@angular/forms';
       ForWomanCategoriesComponent,
       ViewProductComponent,
       ViewProductsComponent,
-      SignComponent
+      SignComponent,
+      BottomNavigationComponent,
+      AdviceMenuComponent
     ],
   providers: [],
   bootstrap: [AppComponent]

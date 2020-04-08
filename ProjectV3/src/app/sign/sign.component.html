@@ -1,3 +1,9 @@
+<div *ngFor="let u of users">
+  <h1>User {{u.login}}</h1>
+</div>
+<div *ngIf="!users">
+  No Users
+</div>
 <div class="login" *ngIf="signIn">
   <div class="form">
     <h2>Please, Fullfill your login and password</h2>
@@ -19,3 +25,4 @@
     <input id="signIn" type="submit" value="Sign In" class="submit" (click)="signInAction()">
   </div>
 </div>
+
