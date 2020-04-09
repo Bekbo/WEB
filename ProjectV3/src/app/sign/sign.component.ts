@@ -15,7 +15,6 @@ export class SignComponent implements OnInit {
   signIn = false;
   signUp = true;
   action = '';
-  users: User[];
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -24,7 +23,6 @@ export class SignComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.getUsers();
     if (this.userService.getStatus()) {
       this.router.navigate(['/forall']);
     } else {
@@ -65,10 +63,5 @@ export class SignComponent implements OnInit {
     this.userService.addUser(new User(login, pass));
     // this.userService.addUser({login, pass} ).subscribe(user => this.users.push(user));
     // console.log(this.userService.getUser(7));
-  }
-  getUsers() {
-    console.log('get');
-    this.userService.getUsers().
-    subscribe(users => this.users = users);
   }
 }
