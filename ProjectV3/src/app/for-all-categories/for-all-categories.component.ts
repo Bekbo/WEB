@@ -11,7 +11,6 @@ import {UserServiceService} from "../user-service.service";
 })
 export class ForAllCategoriesComponent implements OnInit {
   products: Product[] = [];
-  activeUser: User;
   constructor(
     private productsService: ProductService,
     private userServiceService: UserServiceService,
@@ -19,7 +18,7 @@ export class ForAllCategoriesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getProducts();
-    this.userServiceService.getLoggedStatus().subscribe(user => this.activeUser = user);
+    // this.userServiceService.getLoggedStatus().subscribe(user => this.activeUser = user);
   }
   getProducts(): void {
      this.productsService.getProducts()

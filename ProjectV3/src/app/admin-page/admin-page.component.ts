@@ -5,7 +5,8 @@ import { ProductService } from '../product.service';
 import { Product} from '../Product';
 import {Observable, Subject} from 'rxjs';
 import {debounceTime, distinctUntilChanged, switchMap} from 'rxjs/operators';
-import {UserServiceService} from "../user-service.service";
+import {UserServiceService} from '../user-service.service';
+import {AuthorizationService} from '../authorization.service';
 
 @Component({
   selector: 'app-admin-page',
@@ -21,6 +22,7 @@ export class AdminPageComponent implements OnInit {
     private userServiceService: UserServiceService,
     private route: ActivatedRoute,
     private productsService: ProductService,
+    private authorizationService: AuthorizationService,
     private location: Location
   ) { }
 
@@ -28,7 +30,7 @@ export class AdminPageComponent implements OnInit {
     this.searchTerms.next(term);
   }
   ngOnInit(): void {
-    if (!this.userServiceService.getStatus()) {
+    if (!this.authorizationService.loggedIn()) {
       this.router.navigate(['/sign/in']);
     } else {
       this.products$ = this.searchTerms.pipe(
