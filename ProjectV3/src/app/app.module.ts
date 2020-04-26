@@ -21,6 +21,7 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { TokenIntercepterService} from './token-intercepter.service';
 import { AuthorizationService} from './authorization.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule(
   {
@@ -28,6 +29,7 @@ import { AuthorizationService} from './authorization.service';
       BrowserModule,
       AppRoutingModule,
       HttpClientModule,
+      Ng2SearchPipeModule,
       // HttpClientInMemoryWebApiModule.forRoot(
       //   InMemoryDataService, {dataEncapsulation: false}
       // ),

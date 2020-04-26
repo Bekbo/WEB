@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 import { Product } from '../Product';
 import { ProductService} from '../product.service';
 import {UserServiceService} from '../user-service.service';
-import {catchError} from "rxjs/operators";
+import {catchError} from 'rxjs/operators';
 
 @Component({
   selector: 'app-view-product',

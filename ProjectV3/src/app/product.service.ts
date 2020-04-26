@@ -44,11 +44,17 @@ export class ProductService {
     const url = `${this.productsUrl}/${id}`;
     return this.http.get<Product>(`${this.BASE_URL}/${this.productsUrl}/${id}`);
   }
-  updateProduct(product: Product): Observable<any> {
-    return this.http.put(`${this.BASE_URL}/${this.productsUrl}`, product, this.httpOptions).pipe(
-      tap(_ => console.log(`updated product id=${product.id}`)),
-      catchError(this.handleError<any>('update Product'))
-    );
+  // updateProduct(product: Product): Observable<any> {
+  //   return this.http.put(`${this.BASE_URL}/${this.productsUrl}`, product, this.httpOptions).pipe(
+  //     tap(_ => console.log(`updated product id=${product.id}`)),
+  //     catchError(this.handleError<any>('update Product'))
+  //   );
+  // }
+  updateProduct(product: Product, id: number): Observable<any> {
+    return this.http.put('http://127.0.0.1:8000/api/products/edit/' + id, product, this.httpOptions).pipe(
+      tap(_ => alert('updated product = ' +  product.name)),
+    catchError(this.handleError<any>('Can not update product'))
+  );
   }
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
@@ -62,7 +68,6 @@ export class ProductService {
   }
   searchProducts(term: string): Observable<Product[]> {
     if (!term.trim()) {
-      // if not search term, return empty product array.
       return of([]);
     }
     return this.http.get<Product[]>(`${this.productsUrl}/?name=${term}`).pipe(
@@ -76,7 +81,7 @@ export class ProductService {
   }
   addComment(prodId: number, body: string): Observable<Comment[]> {
     return this.http.post<Comment[]>(this.BASE_URL + '/api/product/' + prodId + '/comments',
-      {body: body, username: localStorage.getItem('username')}, this.httpOptions).pipe(
+      {body, username: localStorage.getItem('username')}, this.httpOptions).pipe(
       catchError(this.handleError<any>('Comment adding'))
     );
   }
@@ -92,7 +97,7 @@ export class ProductService {
       catchError(this.handleError<any>('Ordered Product adding'))
     );
   }
-  deleteFromFav(prodid){
+  deleteFromFav(prodid) {
     return this.http.post<any>(this.BASE_URL + '/users/delete/fav', {product : prodid}).pipe(
       tap(_ => console.log('Deleted from Favourites')),
       catchError(this.handleError<any>('Favourite Product deleting'))

@@ -17,8 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework.authtoken.views import obtain_auth_token
-from authorization.views import UserListView, UserDetailAPIView, UserView, login, UserLikedProducts, UserOrderProducts,\
-    AddToFavs, AddToOrder, DeleteFromFavs
+from authorization.views import UserListView, UserView, login, AddToFavs, AddToOrder, DeleteFromFavs
 
 urlpatterns = [
     path('admin/', admin.site.urls),

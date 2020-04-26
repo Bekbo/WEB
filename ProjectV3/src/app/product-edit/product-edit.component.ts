@@ -41,7 +41,7 @@ export class ProductEditComponent implements OnInit {
   }
 
   save(): void {
-    this.productsService.updateProduct(this.product).subscribe(() => this.goBack());
+    this.productsService.updateProduct(this.product, this.product.id).subscribe(() => this.goBack());
   }
   edit(element: string) {
     (document.getElementById(element) as HTMLInputElement).disabled = false;

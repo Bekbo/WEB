@@ -1,8 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {ProductService} from '../product.service';
 import {Product} from '../Product';
-import {User} from "../User";
-import {UserServiceService} from "../user-service.service";
+import {User} from '../User';
+import {UserServiceService} from '../user-service.service';
 
 @Component({
   selector: 'app-for-all-categories',

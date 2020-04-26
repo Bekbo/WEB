@@ -52,6 +52,11 @@ class ProductDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = ProductSerializer
     # permission_classes = (IsAuthenticated,)
 
+class ProductListAddAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Product.objects.all()
+    serializer_class = ProductSerializer
+    # permission_classes = (IsAuthenticated,)
+
 
 @api_view(['GET'])
 @csrf_exempt

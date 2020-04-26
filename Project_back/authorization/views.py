@@ -59,26 +59,6 @@ class UserView(APIView):
             return Response(ser.data)
 
 
-class UserDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
-    queryset = User.objects.all()
-    serializer_class = UserSerializer
-    permission_classes = [permissions.IsAuthenticated]
-
-
-@csrf_exempt
-@api_view(["GET"])
-@permission_classes((AllowAny,))
-def UserLikedProducts(request):
-    return Response({'products': request.user.liked})
-
-
-@csrf_exempt
-@api_view(["GET"])
-@permission_classes((AllowAny,))
-def UserOrderProducts(request):
-    return Response(request.user.myOrders)
-
-
 @csrf_exempt
 @api_view(["POST", "GET"])
 # @permission_classes((AllowAny, ))
