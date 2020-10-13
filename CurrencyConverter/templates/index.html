@@ -67,6 +67,7 @@
 </head>
 <body>
     <nav class="menu navbar-default navbar-menu">
+        {#    top navigation bar#}
         <div class="container">
             <div class="menu-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -75,8 +76,10 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand">Currency Converter Website</a>
+{#                Company Name#}
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
+{#                Navigation menus#}
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Home</a></li>
                     <li><a href="#">Currency Converter Program</a></li>
@@ -89,21 +92,25 @@
                 <div class="col-md-6 col-md-offset-3">
                     <div class="panel panel-primary text-center">
                         <div class="panel-heading">
+{#                            heading#}
                             <h4 class="panel-title">Currency Converter</h4>
                         </div>
                         <div class="error" style="margin-top: 10px;">
                             Please enter numeric value
                         </div>
                         <div class="panel-body">
+{#                            form to fill#}
                             <form class="form-vertical" method="post" action="">
                                 {% csrf_token %}
                                 <div class="form-group center">
                                     <label>Enter Value:</label>
+{#                                    input for eth#}
                                     <input id="eth" name="eth" type="number" class="amount form-control" required placeholder="Enter Etheriums" min="0">
                                 </div>
                                 <div class="form-group inline-block center">
                                     <input type="checkbox" style="margin-right: 3px"><label style="color: #FFFFFF; margin: 2px;"> Etherium Classic</label>
                                     <input type="submit" value="Calculate">
+{#                                    output for eth#}
                                     <label for="eth"></label>
                                 </div>
 
@@ -121,6 +128,7 @@
             </div>
     </div>
     <footer class="footer">
+{#        footer and links#}
         <div class="container">
             <p class="text-center">© Ospan Bekbolatabylay All Rights Reserved | Portfolio - <a href="https://github.com/Bekbo">https://github.com/Bekbo</a></p>
         </div>
